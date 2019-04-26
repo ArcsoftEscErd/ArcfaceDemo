@@ -159,10 +159,6 @@ public class FaceHelper {
 //                TrackUtil.keepMaxFace(faceInfoList);
 
                 refreshTrackId(faceInfoList);
-                code = ftEngine.process(nv21, previewSize.width, previewSize.height, FaceEngine.CP_PAF_NV21, faceInfoList, FaceEngine.ASF_LIVENESS);
-                if (code != ErrorInfo.MOK) {
-                    faceListener.onFail(new Exception("process failed,code is " + code));
-                }
             }
             facePreviewInfoList.clear();
             for (int i = 0; i < faceInfoList.size(); i++) {
